@@ -5,9 +5,7 @@ const router = express.Router();
 const apiUrl = "https://api.github.com/users";
 
 function getUser(username) {
-  return fetch(`${apiUrl}/${username}`, {
-    access_token: "5a5ff3c1c716aa274b7150747a57ed129ce76e52"
-  }).then(res => {
+  return fetch(`${apiUrl}/${username}`).then(res => {
     return res.json().then(user => {
       return { user, found: res.status === 200 };
     });
